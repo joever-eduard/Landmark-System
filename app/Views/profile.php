@@ -14,7 +14,7 @@
         <h1>Edit Profile</h1>
         <form method="post" action="/profile">
 			<input type="text" name="username" placeholder="Username" value="<?= set_value('username', $user['username']) ?>">
-            <input type="email" readonly placeholder="Email" value="<?= set_value('email')?>">
+            <input type="email" readonly placeholder="Email" value="<?= $user['email'] ?>">
             <input type="password" name="password" placeholder="Password" value="">
             <input type="password" name="password_confirm" placeholder="Re-enter Password" value="">
         

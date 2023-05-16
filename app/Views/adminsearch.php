@@ -35,7 +35,7 @@
         <div class="search-container">
             <h2>Search by Lot number :</h2>
             <input type="search" placeholder="Lot No." class="search-bar">
-            <input type="submit" class="search-button" value="Submit">
+            <input type="submit" class="search-button" value="Submit" onclick="window.location.href='/searchinfo/';">
         </div>
 
         <div class="table-container">

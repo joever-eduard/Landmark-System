@@ -31,18 +31,19 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('homepage', 'PagesController::index');
+$routes->get('/', 'PagesController::index');
 $routes->get('about', 'PagesController::about');
 $routes->get('search', 'PagesController::search');
-$routes->get('login', 'Users::login');
+$routes->match(['get', 'post'], 'login', 'Users::login');
 $routes->match(['get','post'],'register', 'Users::register');
 $routes->match(['get','post'],'profile', 'Users::profile');
-$routes->get('adminhome', 'PagesController::adminhome');
+$routes->get('adminhome', 'PagesController::adminHome');
 $routes->get('adminabout', 'PagesController::adminAbout');
 $routes->get('adminsearch', 'PagesController::adminSearch');
+$routes->get('searchinfo', 'PagesController::searchinfo');
 $routes->get('documents', 'PagesController::documents');
 $routes->get('reports', 'PagesController::reports');
-$routes->get('add', 'PagesController::add');
+$routes->match(['get', 'post'], 'add', 'PagesController::add');
 $routes->get('update', 'PagesController::update');
 
 

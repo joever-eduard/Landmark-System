@@ -1,9 +1,10 @@
-<?php
-
-namespace App\Controllers;
+<?php namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\UserModel;
+use App\Models\LotModel;
+use App\Models\PropertyDistanceModel;
+use App\Models\PropertyValuationModel;
 
 class PagesController extends BaseController
 {
@@ -39,6 +40,11 @@ class PagesController extends BaseController
         return view('adminsearch');
     }
 
+    public function searchinfo()
+    {
+        return view('searchinfo');
+    }
+
     public function documents()
     {
         return view('documents');
@@ -51,7 +57,32 @@ class PagesController extends BaseController
 
     public function add()
     {
-        return view('add');
+        $data = [];
+        helper(['form']);
+
+        if ($this->request->getMethod() == 'post') {
+            $newData = [
+                'lot_no' => $this->request->getVar('lot_no'),
+                'cad_no' => $this->request->getVar('cad_no'),
+                'size_of_area' => $this->request->getVar('size_of_area'),
+                'location' => $this->request->getVar('location'),
+                'phase' => $this->request->getVar('phase'),
+                'bllm' => $this->request->getVar('bllm'),
+                'distance_to_point1' => $this->request->getVar('distance_to_point1'),
+                'land_owner' => $this->request->getVar('land_owner'),
+                'status' => $this->request->getVar('status'),
+                'valuation_amount' => $this->request->getVar('valuation_amount'),
+                'tree_valuation_amount' => $this->request->getVar('tree_valuation_amount'),
+                'disturbance_amount' => $this->request->getVar('disturbance_amount'),
+                'house_structure_amount' => $this->request->getVar('house_structure_amount'),
+            ];   
+
+            var_dump($newData);
+            $model = new LotModel();
+            $model->save($newData);
+
+        }
+        echo view('add');
     }
 
     public function update()

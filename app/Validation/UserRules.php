@@ -9,11 +9,12 @@ class UserRules
     $model = new UserModel();
     $user = $model->where('email', $data['email'])
                   ->first();
-    var_dump($user);
 
     if(!$user)
       return false;
 
-    return password_verify($data['password'], $user['password']);
+    $isVerify = password_verify($data['password'], $user['password']);
+
+    return $isVerify;
   }
 }

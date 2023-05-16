@@ -16,10 +16,10 @@
                 </div>
             <?php endif; ?>
 
-            <form action="/adminhome/" method="post">
-                <input type="text" name="username" placeholder="Username" value="<?= set_value('username')?>">
+            <form method="post">
+                <input type="text" name="username" placeholder="Username" value="<?= set_value('username') ?>">
                 <input type="email" name="email" placeholder="Email" value="<?= set_value('email')?>">
-                <input type="password" name="password" placeholder="Password" value="<?= set_value('password')?>">
+                <input type="password" name="password" placeholder="Password" value="">
                 
                 <?php if (isset($validation)): ?>
                     <div class="col-12">
