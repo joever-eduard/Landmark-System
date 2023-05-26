@@ -37,7 +37,7 @@ $routes->get('search', 'PagesController::search');
 $routes->match(['get', 'post'], 'login', 'Users::login');
 $routes->match(['get','post'],'register', 'Users::register');
 $routes->match(['get','post'],'profile', 'Users::profile');
-$routes->get('adminhome', 'PagesController::adminHome');
+$routes->get('/adminhome', 'PagesController::adminHome');
 $routes->get('adminabout', 'PagesController::adminAbout');
 $routes->get('adminsearch', 'PagesController::adminSearch');
 $routes->get('searchinfo', 'PagesController::searchinfo');

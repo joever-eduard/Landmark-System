@@ -6,8 +6,8 @@ class PropertyDistanceModel extends Model{
     protected $table = 'property_distance';
     // TODO: Update fields
     protected $allowedFields = [
-        'distance_id',
-        'lot_no', 
+        'id',
+        'lot_id', 
         'bllm', 
         'distance_to_point1',
         ];

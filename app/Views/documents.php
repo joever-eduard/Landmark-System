@@ -43,7 +43,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <!-- <tr>
                         <td>001</td>
                         <td>001-A-001</td>
                         <td>120 sqm</td>
@@ -75,7 +75,23 @@
                             <a href="#" class="view-link">View</a>
                             <a href="/update" class="edit-link">Edit</a>
                         </td>
-                    </tr>
+                    </tr> -->
+                    
+                    <?php foreach ($lots as $lot) { ?>
+                        <tr>
+                        <td><?= isset($lot['lot_no']) ? esc($lot['lot_no']) : '' ?></td>
+                        <td><?= isset($lot['cad_no']) ? esc($lot['cad_no']) : '' ?></td>
+                        <td><?= isset($lot['size_of_area']) ? esc($lot['size_of_area']) : '' ?></td>
+                        <td><?= isset($lot['location']) ? esc($lot['location']) : '' ?></td>
+                        <td><input type="file" name="file"></td>
+                        <td>
+                            <a href="#" class="view-link">View</a>
+                            <a href="/update" class="edit-link">Edit</a>
+                        </td>
+                        </tr>
+
+                    <?php } ?>
+
                 </tbody>
             </table>
         </div>

@@ -127,7 +127,7 @@ body{
   }
   
   .box {
-    border: 2px solid #0054A5;
+    border: 10px solid #0054A5;
     padding: 10px;
     margin: 20px 50px 20px 100px; /* added margin */
     font-weight: 600; /* added semi-bold font weight */
